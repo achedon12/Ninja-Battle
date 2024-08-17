@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   deploy:
@@ -27,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Build the project (Assuming a build script is defined in package.json)
+      # Build the project
       - name: Build the project
         run: npm run build
 
@@ -36,5 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./build  # Assurez-vous que le répertoire est correct
           publish_branch: gh-pages
