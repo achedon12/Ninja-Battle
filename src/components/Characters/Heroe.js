@@ -42,12 +42,12 @@ const Heroe = ({
                 clearInterval(intervalId);
             }
         };
-    }, [action]);
+    }, [IDLE, RUN, SLIDE, THROW, action, lastAction]);
 
     useEffect(() => {
         if (action === THROW && !kunai) {
             setKunai(<Kunai direction={direction} heroPosition={position} heroSize={{width: 100, height: 100}}/>);        }
-    }, [action, imageNumber, lastAction, direction]);
+    }, [action, imageNumber, lastAction, direction, THROW, kunai, position]);
 
     useEffect(() => {
         import(`../../assets/heroe/${action}/${action.charAt(0).toUpperCase() + action.slice(1)}__00${imageNumber}.png`)
@@ -65,7 +65,7 @@ const Heroe = ({
             window.removeEventListener('keyup', handleKeyUp);
             window.removeEventListener('contextmenu', handleRightClick);
         };
-    }, [position]);
+    }, [handleKeyDown, handleKeyUp, handleRightClick, position]);
 
     const handleKeyDown = (event) => {
         let newX = position.x;
