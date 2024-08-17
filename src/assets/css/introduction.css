@@ -1,0 +1,73 @@
+.introduction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.ninja-animation {
+    width: 100px;
+    height: 100px;
+    background-image: url('../heroe/idle/Idle__000.png');
+    background-size: cover;
+    animation: ninjaAnimation 3s ease-in-out;
+}
+
+.intro-text {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.play-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #320636, #690c6e);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #1ED760;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+}
+
+@keyframes letterAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.intro-text span {
+    display: inline-block;
+    animation: letterAnimation 0.3s ease forwards;
+}
+
+@keyframes ninjaAnimation {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(720deg);
+        opacity: 1;
+    }
+}
