@@ -42,11 +42,12 @@ const Heroe = ({
                 clearInterval(intervalId);
             }
         };
-    }, [action, lastAction]);
+    }, [IDLE, RUN, SLIDE, THROW, action, lastAction]);
 
     useEffect(() => {
         if (action === THROW && !kunai) {
-            setKunai(<Kunai direction={direction} heroPosition={position} heroSize={{width: 100, height: 100}}/>);        }
+            setKunai(<Kunai direction={direction} heroPosition={position} heroSize={{width: 100, height: 100}}/>);
+        }
     }, [action, imageNumber, lastAction, direction, THROW, kunai, position]);
 
     useEffect(() => {
@@ -56,17 +57,7 @@ const Heroe = ({
             });
     }, [action, imageNumber]);
 
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('keyup', handleKeyUp);
-        window.addEventListener('contextmenu', handleRightClick);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('keyup', handleKeyUp);
-            window.removeEventListener('contextmenu', handleRightClick);
-        };
-    }, [position]);
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyDown = (event) => {
         let newX = position.x;
         let newY = position.y;
@@ -99,16 +90,30 @@ const Heroe = ({
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyUp = (event) => {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             setAction(IDLE);
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleRightClick = (event) => {
         event.preventDefault();
         setAction(THROW);
     };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('keyup', handleKeyUp);
+        window.addEventListener('contextmenu', handleRightClick);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('keyup', handleKeyUp);
+            window.removeEventListener('contextmenu', handleRightClick);
+        };
+        // eslint-disable-next-line no-use-before-define
+    }, [handleKeyDown, handleKeyUp, handleRightClick, position]);
 
     if (!image) {
         return null;
