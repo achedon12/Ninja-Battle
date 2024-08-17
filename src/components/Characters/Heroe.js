@@ -42,7 +42,7 @@ const Heroe = ({
                 clearInterval(intervalId);
             }
         };
-    }, [IDLE, RUN, SLIDE, THROW, action, lastAction]);
+    }, [action, lastAction]);
 
     useEffect(() => {
         if (action === THROW && !kunai) {
@@ -65,10 +65,8 @@ const Heroe = ({
             window.removeEventListener('keyup', handleKeyUp);
             window.removeEventListener('contextmenu', handleRightClick);
         };
-        // eslint-disable-next-line no-use-before-define
-    }, [handleKeyDown, handleKeyUp, handleRightClick, position]);
+    }, [position]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyDown = (event) => {
         let newX = position.x;
         let newY = position.y;
@@ -101,14 +99,12 @@ const Heroe = ({
         }
     };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyUp = (event) => {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             setAction(IDLE);
         }
     };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleRightClick = (event) => {
         event.preventDefault();
         setAction(THROW);
