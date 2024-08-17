@@ -65,6 +65,7 @@ const Heroe = ({
             window.removeEventListener('keyup', handleKeyUp);
             window.removeEventListener('contextmenu', handleRightClick);
         };
+        // eslint-disable-next-line no-use-before-define
     }, [handleKeyDown, handleKeyUp, handleRightClick, position]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
