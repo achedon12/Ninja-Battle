@@ -6,7 +6,7 @@ const Heroe = ({
                }) => {
 
     // Actions
-    const [IDLE, RUN, JUMP, SLIDE, WALK, THROW] = ['idle', 'run', 'jump', 'slide', 'walk', 'throw'];
+    const [IDLE, RUN, SLIDE, THROW] = ['idle', 'run', 'slide', 'throw'];
     const DEFAULT_ACTION = IDLE;
     const [DIRECTION_LEFT, DIRECTION_RIGHT] = ['left', 'right'];
     const DEFAULT_DIRECTION = DIRECTION_RIGHT;
@@ -17,7 +17,6 @@ const Heroe = ({
     const [imageNumber, setImageNumber] = useState(0);
     const [action, setAction] = useState(DEFAULT_ACTION);
     const [lastAction, setLastAction] = useState(DEFAULT_ACTION);
-    const [isSliding, setIsSliding] = useState(false);
     const [name, setName] = useState(defaultName);
     const [kunai, setKunai] = useState(null);
 
