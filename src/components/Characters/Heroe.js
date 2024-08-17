@@ -67,6 +67,7 @@ const Heroe = ({
         };
     }, [handleKeyDown, handleKeyUp, handleRightClick, position]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyDown = (event) => {
         let newX = position.x;
         let newY = position.y;
@@ -99,12 +100,14 @@ const Heroe = ({
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleKeyUp = (event) => {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             setAction(IDLE);
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleRightClick = (event) => {
         event.preventDefault();
         setAction(THROW);
