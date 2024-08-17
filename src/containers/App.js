@@ -3,6 +3,7 @@ import Introduction from "./Introduction";
 import Environment from "./Environment";
 import music from "../assets/musics/default.mp3";
 import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
+import HotBar from "../components/HotBar/HotBar";
 
 const App = () => {
     const [intro, setIntro] = useState(true);
@@ -26,7 +27,7 @@ const App = () => {
 
     return (
         <>
-            {!intro && (<MusicPlayer playing={playing} setPlaying={setPlaying} audio={audio}/>)}
+            {!intro && (<HotBar playing={playing} setPlaying={setPlaying} audio={audio}/>)}
             {intro ?
                 <Introduction
                     setIntro={() => setIntro(false)}
