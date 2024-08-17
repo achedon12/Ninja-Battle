@@ -1,6 +1,6 @@
 import Heroe from "../components/Characters/Heroe";
 
-const App = ({}) => {
+const App = () => {
     return (
         <>
             <Heroe name="Superman"/>
