@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ninja-Battle/static/css/main.59adc065.css",
-    "main.js": "/Ninja-Battle/static/js/main.748387b2.js",
+    "main.js": "/Ninja-Battle/static/js/main.83525369.js",
     "static/js/6381.5c9553c5.chunk.js": "/Ninja-Battle/static/js/6381.5c9553c5.chunk.js",
     "static/js/939.0d6fbc70.chunk.js": "/Ninja-Battle/static/js/939.0d6fbc70.chunk.js",
     "static/js/5586.1f91e7eb.chunk.js": "/Ninja-Battle/static/js/5586.1f91e7eb.chunk.js",
@@ -186,10 +186,10 @@
     "static/media/Idle__000.png": "/Ninja-Battle/static/media/Idle__000.9f9c47a039f29bd6fb6e.png",
     "index.html": "/Ninja-Battle/index.html",
     "main.59adc065.css.map": "/Ninja-Battle/static/css/main.59adc065.css.map",
-    "main.748387b2.js.map": "/Ninja-Battle/static/js/main.748387b2.js.map"
+    "main.83525369.js.map": "/Ninja-Battle/static/js/main.83525369.js.map"
   },
   "entrypoints": [
     "static/css/main.59adc065.css",
-    "static/js/main.748387b2.js"
+    "static/js/main.83525369.js"
   ]
 }
