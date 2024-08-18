@@ -27,25 +27,25 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: ./build
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name  == 'workflow_dispatch'
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          name: build-artifact
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
