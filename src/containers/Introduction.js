@@ -5,7 +5,7 @@ const Introduction = ({setIntro, onPlayClick}) => {
     const [showPlayButton, setShowPlayButton] = useState(false);
     const [showText, setShowText] = useState(false);
 
-    const text = "Bienvenue dans le jeu Ninja Battle!";
+    const text = "Ninja Legends";
     const letters = text.split('').map((letter, index) => (
         <span key={index} style={{animationDelay: `${index * 0.05}s`}}>
             {letter === ' ' ? '\u00A0' : letter}
