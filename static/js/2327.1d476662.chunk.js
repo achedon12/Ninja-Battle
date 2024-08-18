@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkninja=self.webpackChunkninja||[]).push([[2327],{62327:(e,n,s)=>{e.exports=s.p+"static/media/Slide__006.b4f2fbc7446eb64b959e.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkninja=self.webpackChunkninja||[]).push([[9291],{29291:(e,n,s)=>{e.exports=s.p+"static/media/Idle__004.c050e35825c52d9e9fe5.png"}}]);

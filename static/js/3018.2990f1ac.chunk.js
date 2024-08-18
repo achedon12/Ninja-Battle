@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkninja=self.webpackChunkninja||[]).push([[3018],{13018:(e,a,n)=>{e.exports=n.p+"static/media/Dead__005.5b83375ae4ba3d217eb2.png"}}]);
