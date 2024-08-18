@@ -2,7 +2,7 @@ import {useState} from "react";
 import Modal from 'react-modal';
 import {PricetagOutline} from "react-ionicons";
 
-const Market = ({}) => {
+const Market = () => {
     const [showModal, setShowModal] = useState(false);
 
 

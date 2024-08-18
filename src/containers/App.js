@@ -22,7 +22,7 @@ const App = () => {
         } else {
             audio.pause();
         }
-    }, [playing]);
+    }, [audio, playing]);
 
     return (
         <>

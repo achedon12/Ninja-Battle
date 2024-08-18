@@ -1,4 +1,4 @@
-import {CogOutline, PricetagOutline} from "react-ionicons";
+import {CogOutline} from "react-ionicons";
 import {useEffect, useState} from "react";
 import '../../../assets/css/settings.css';
 import Modal from 'react-modal';
@@ -9,7 +9,7 @@ const Settings = ({showSettings, setShowSettings}) => {
 
     useEffect(() => {
         setShowSettings();
-    }, [showModal]);
+    }, [setShowSettings, showModal]);
 
     useEffect(() => {
         setShowModal(showSettings);

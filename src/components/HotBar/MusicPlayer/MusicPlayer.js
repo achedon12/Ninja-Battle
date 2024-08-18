@@ -41,7 +41,7 @@ const MusicPlayer = ({playing, setPlaying, audio, showPlayer, setShowPlayer}) =>
 
     useEffect(() => {
         setShowPlayer();
-    }, [showModal]);
+    }, [setShowPlayer, showModal]);
 
     useEffect(() => {
         setShowModal(showPlayer);

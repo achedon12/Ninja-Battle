@@ -1,23 +1,21 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - '**'
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Install Node.js, npm, and dependencies
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -26,14 +24,32 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Build the project
       - name: Build the project
         run: npm run build
 
-      # Deploy to GitHub Pages
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Assurez-vous que le répertoire est correct
+          publish_dir: ./build
           publish_branch: gh-pages
