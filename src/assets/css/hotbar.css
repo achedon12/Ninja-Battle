@@ -1,0 +1,21 @@
+.hotbar {
+    width: 100%;
+    background: #777777;
+    display: flex;
+    padding: 10px 0 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hotbar-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.hotbar svg:hover {
+    cursor: pointer;
+}
