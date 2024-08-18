@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import '../../assets/css/musicPlayer.css';
+import '../../../assets/css/musicPlayer.css';
 import {
     MusicalNoteOutline,
     PauseCircleOutline,
@@ -89,7 +89,7 @@ const MusicPlayer = ({playing, setPlaying, audio, showPlayer, setShowPlayer}) =>
                 width="30px"
                 onClick={() => setShowModal(!showModal)}
             />
-            <Modal className="controls-container" isOpen={showModal} onRequestClose={() => setShowModal(false)}>
+            <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                 <div className="controls">
                     {playing ? (
                         <PlayCircleOutline

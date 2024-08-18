@@ -135,7 +135,7 @@ const Heroe = ({
                         style={{
                             position: 'absolute',
                             left: `${position.x}px`,
-                            bottom: `${position.y + 110}px`,
+                            bottom: `${position.y + 150}px`,
                             color: 'white',
                             textAlign: 'center',
                             width: '100px',
@@ -147,9 +147,8 @@ const Heroe = ({
                         src={image}
                         alt={name}
                         style={{
-                            position: 'absolute',
-                            left: `${position.x}px`,
-                            bottom: `${position.y}px`,
+                            marginLeft: `${position.x}px`,
+                            marginTop: window.innerHeight - 100 * 2 - position.y,
                             width: '100px',
                             height: '100px',
                             transform: direction === DIRECTION_LEFT ? 'scaleX(-1)' : 'scaleX(1)',

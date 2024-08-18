@@ -1,7 +1,8 @@
 import '../../assets/css/hotbar.css';
-import MusicPlayer from "../MusicPlayer/MusicPlayer";
-import Settings from "../Settings/Settings";
+import MusicPlayer from "./MusicPlayer/MusicPlayer";
+import Settings from "./Settings/Settings";
 import {useEffect, useState} from "react";
+import Market from "./Market/Market";
 
 const HotBar = ({playing, setPlaying, audio}) => {
 
@@ -26,6 +27,7 @@ const HotBar = ({playing, setPlaying, audio}) => {
             <div className="hotbar-settings">
                 <MusicPlayer playing={playing} setPlaying={setPlaying} audio={audio} setShowPlayer={setShowPlayer} showPlayer={showPlayer}/>
                 <Settings setShowSettings={setShowSettings} showSettings={showSettings} />
+                <Market />
             </div>
             <div className="hotbar-items">
             </div>

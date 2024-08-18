@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Introduction from "./Introduction";
 import Environment from "./Environment";
 import music from "../assets/musics/default.mp3";
-import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
 import HotBar from "../components/HotBar/HotBar";
 
 const App = () => {

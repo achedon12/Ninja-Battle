@@ -1,6 +1,6 @@
-import {CogOutline} from "react-ionicons";
+import {CogOutline, PricetagOutline} from "react-ionicons";
 import {useEffect, useState} from "react";
-import '../../assets/css/settings.css';
+import '../../../assets/css/settings.css';
 import Modal from 'react-modal';
 
 const Settings = ({showSettings, setShowSettings}) => {
@@ -19,18 +19,16 @@ const Settings = ({showSettings, setShowSettings}) => {
         <div className="settings">
             <CogOutline
                 color={'#000000'}
-                title={"Settings"}
                 height="30px"
                 width="30px"
                 onClick={() => setShowModal(!showModal)}
             />
-            <Modal className="settings-container" isOpen={showModal} onRequestClose={() => setShowModal(false)}>
+            <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                 <div className="settings-content">
                     <h1>Settings</h1>
                     <p>Settings content here</p>
                 </div>
             </Modal>
-
         </div>
     );
 
