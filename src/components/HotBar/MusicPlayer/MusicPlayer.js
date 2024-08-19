@@ -8,6 +8,7 @@ import {
     VolumeMuteOutline
 } from "react-ionicons";
 import Modal from 'react-modal';
+import GameButton from "../../GameButton/GameButton";
 
 const MusicPlayer = ({playing, setPlaying, audio, showPlayer, setShowPlayer}) => {
     const [volume, setVolume] = useState(0.5);
@@ -83,11 +84,35 @@ const MusicPlayer = ({playing, setPlaying, audio, showPlayer, setShowPlayer}) =>
 
     return (
         <div className="music-player">
-            <MusicalNoteOutline
-                color={'#000000'}
-                height="30px"
-                width="30px"
+            <GameButton
+                onClick={() => toggleMute}
+                icon={
+                    isMuted ? (
+                        <VolumeMuteOutline
+                            color={'#ffffff'}
+                            height="30px"
+                            width="30px"
+                            onClick={toggleMute}
+                        />
+                    ) : (
+                        <VolumeMediumOutline
+                            color={'#ffffff'}
+                            height="30px"
+                            width="30px"
+                            onClick={toggleMute}
+                        />
+                    )
+                }
+            />
+            <GameButton
                 onClick={() => setShowModal(!showModal)}
+                icon={
+                    <MusicalNoteOutline
+                        color={'#fff'}
+                        height="30px"
+                        width="30px"
+                    />
+                }
             />
             <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                 <div className="controls">
@@ -123,14 +148,14 @@ const MusicPlayer = ({playing, setPlaying, audio, showPlayer, setShowPlayer}) =>
                         />
                     )}
                     {isMuted ? (
-                        <VolumeMediumOutline
+                        <VolumeMuteOutline
                             color={'#000000'}
                             height="30px"
                             width="30px"
                             onClick={toggleMute}
                         />
                     ) : (
-                        <VolumeMuteOutline
+                        <VolumeMediumOutline
                             color={'#000000'}
                             height="30px"
                             width="30px"

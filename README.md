@@ -1,3 +1,7 @@
+# Assets Pack
+
+https://pzuh.itch.io/ninja-adventure-free-sprites
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
